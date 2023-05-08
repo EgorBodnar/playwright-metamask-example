@@ -33,6 +33,7 @@ Follow these steps to set up the project:
 
 2.  **Install Yarn**: Yarn is a package manager for Node.js that we'll use to manage the project's dependencies. You can install Yarn by following the instructions on the official website: [https://yarnpkg.com/](https://yarnpkg.com/).
 
+3.  Create a copy of the .env.example file and rename it to .env. This new file will store the actual values for the environment variables.
 
 <a name="run-test"></a>
 ### Running Tests
@@ -66,6 +67,7 @@ The report will be automatically generated after the automated tests have been e
 │  │     └─ components/ -- Components can be connected to pages like building blocks, extending their functionality. This approach eliminates code duplication and improves the maintainability of the tests.
 │  └─
 ├─ playwright.config.ts -- Playwright config file
+├─ .env                 -- requared env variables
 ...
 ...
 └─ README.md
