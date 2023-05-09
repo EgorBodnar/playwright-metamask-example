@@ -38,5 +38,9 @@ test.describe("MetaMask wallet connection", () => {
     await newMetaMaskTab.SELECTORS.SIGNATURE_REQUEST_VIEW.SIGN_BUTTON.click();
 
     await expect(signatureVerifierPage.SELECTORS.SIGNATURE).toBeVisible();
+
+    await signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_BUTTON.click();
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.FRAME).toBeVisible();
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.STATUS_TEXT).toContainText('Valid signature');
   });
 });
