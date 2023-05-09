@@ -7,8 +7,7 @@ import { metaMaskWallet } from "../../../testData/metaMaskWallet";
 dotenv.config();
 
 test.describe("MetaMask wallet connection", () => {
-
-  test("Sign massage by Metamask", async ({ page, context }) => {
+  test.beforeEach(async ({ page , context}) => {
     const signatureVerifierPage = new SignatureVerifierPage(context.pages()[0]);
     const metaMaskExtension = new MetaMaskExtension(context.pages()[1]);
 
@@ -18,6 +17,10 @@ test.describe("MetaMask wallet connection", () => {
     await metaMaskExtension.navigateTo();
     await metaMaskExtension.verifyRequiredElementsPresent();
     await metaMaskExtension.importWallet(metaMaskWallet.passphrase, metaMaskWallet.password);
+  });
+
+  test("Sign massage by Metamask", async ({ page, context }) => {
+    const signatureVerifierPage = new SignatureVerifierPage(context.pages()[0]);
 
     await signatureVerifierPage.SELECTORS.MAIN_HEADER.CONNECT_BUTTON.click();
     const newMetaMaskTab = new MetaMaskExtension(context.pages()[2]);
