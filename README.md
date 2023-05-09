@@ -34,6 +34,11 @@ Follow these steps to set up the project:
 2.  **Install Yarn**: Yarn is a package manager for Node.js that we'll use to manage the project's dependencies. You can install Yarn by following the instructions on the official website: [https://yarnpkg.com/](https://yarnpkg.com/).
 
 3.  Create a copy of the `.env.example` file and rename it to `.env`. This new file will store the actual values for the environment variables.
+  
+4. **Install dependencies**
+```bash
+yarn install
+```
 
 <a name="run-test"></a>
 ### Running Tests
