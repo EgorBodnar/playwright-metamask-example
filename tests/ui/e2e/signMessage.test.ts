@@ -46,4 +46,24 @@ test.describe("MetaMask wallet connection", () => {
     await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.FRAME).toBeVisible();
     await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.STATUS_TEXT).toContainText('Valid signature');
   });
+
+  test("Try to sign empty message", async ({ page, context }) => {
+    const signatureVerifierPage = new SignatureVerifierPage(context.pages()[0]);
+
+    await signatureVerifierPage.SELECTORS.WALLET_ADDRESS_INPUT.fill(metaMaskWallet.address);
+    await signatureVerifierPage.SELECTORS.SIGN_MASSAGE_BUTTON.click();
+
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.FRAME).toBeVisible();
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.STATUS_TEXT).toContainText('Please input the message');
+  });
+
+  test("Try to sign empty wallet address", async ({ page, context }) => {
+    const signatureVerifierPage = new SignatureVerifierPage(context.pages()[0]);
+
+    await signatureVerifierPage.SELECTORS.MESSAGE_INPUT.fill('TEST MESSAGE');
+    await signatureVerifierPage.SELECTORS.SIGN_MASSAGE_BUTTON.click();
+
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.FRAME).toBeVisible();
+    await expect(signatureVerifierPage.SELECTORS.VERIFY_SIGNATURE_POPUP.STATUS_TEXT).toContainText('Please input the address');
+  });
 });
