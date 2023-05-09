@@ -1,4 +1,4 @@
-For interacting with the MetaMask extension, there is a solution called `Synpress`. This plugin allows you to communicate with MetaMask effectively.
+For interacting with the MetaMask extension, there is a solution called `Synpress`. This plugin allows you to communicate with MetaMask effectively. At present, this solution is the most popular and comparatively supported option for both Cypress and Playwright.
 
 #### Advantages:
 
