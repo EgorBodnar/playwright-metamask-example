@@ -2,6 +2,7 @@ import { BasePage } from "./BasePage";
 import { PageModel } from "../../../interfaces/PageModel.interface";
 import { expect, Page } from "@playwright/test";
 import { MainHeaderComponent } from "./components/MainHeaderComponent";
+import { VerifySignaturePopUpComponent } from "./components/VerifySignaturePopUpComponent";
 
 export class SignatureVerifierPage extends BasePage implements PageModel {
 
@@ -12,6 +13,7 @@ export class SignatureVerifierPage extends BasePage implements PageModel {
 
   public SELECTORS = {
     MAIN_HEADER: new MainHeaderComponent(this.page).MAIN_HEADER,
+    VERIFY_SIGNATURE_POPUP: new VerifySignaturePopUpComponent(this.page).VERIFY_SIGNATURE_POPUP,
     WALLET_ADDRESS_INPUT: this.page.locator("#address"),
     MESSAGE_INPUT: this.page.locator("#message"),
     SIGN_MASSAGE_BUTTON: this.page.getByRole('button', { name: 'Sign the message' }),
