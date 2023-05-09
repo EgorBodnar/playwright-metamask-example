@@ -19,7 +19,7 @@ test.describe("MetaMask wallet connection", () => {
     await metaMaskExtension.importWallet(metaMaskWallet.passphrase, metaMaskWallet.password);
   });
 
-  test("Sign massage by Metamask", async ({ page, context }) => {
+  test("Sign and verify massage by Metamask", async ({ page, context }) => {
     const signatureVerifierPage = new SignatureVerifierPage(context.pages()[0]);
 
     await signatureVerifierPage.SELECTORS.MAIN_HEADER.CONNECT_BUTTON.click();
