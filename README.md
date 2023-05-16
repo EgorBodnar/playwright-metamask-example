@@ -8,6 +8,7 @@ The concept of a Framework as a black box for CI/CD systems is applied here. As 
 - [Installation](#installation)
 - [Running Tests](#run-test)
 - [Project Structure](#project-structure)
+- [🎥 Demo how it works](#demo)
 
 <a name="architecture"></a>
 ### <p style="text-align: center;">Test Adaptation Layer</p>
@@ -77,3 +78,7 @@ The report will be automatically generated after the automated tests have been e
 ...
 └─ README.md
 ```
+
+<a name="demo"></a>
+### 🎥 Demo how it works
+![demo](doc/demo.gif)
